@@ -1,4 +1,15 @@
 <?php
+
+function menu_sel($type) {
+  if (isset($_GET['topic'])) {
+    $cur_topic = $_GET['topic'];
+    if($cur_topic == $type) {
+      return " id='selected'";
+    }
+  }
+  return "";//"|type=".$type."|topic=".$cur_topic;
+}
+
 echo "<html>";
 echo "<head>";
 echo "<meta charset='utf-8'>";
@@ -8,6 +19,7 @@ echo "</title>";
 echo "<link rel='stylesheet' type='text/css' href='main.css'>";
 echo "</head>";
 echo "<body>";
+
 ?>
 
   <div id="container">
@@ -18,12 +30,12 @@ echo "<body>";
     </div>
     <div id="navigation">
       <ul>
-        <li><a href="#">Статьи</a></li>
-        <li><a href="#">Профессии</a></li>
-        <li><a href="#">Учебные заведения</a></li>
-        <li><a href="#">Тесты</a></li>
-        <li><a href="#">Организации</a></li>
-        <li id='nav-right'><a href="#">Контакты</a></li>
+        <li><a href="?topic=articles"<?php echo menu_sel('articles')?>>Статьи</a></li>
+        <li><a href="?topic=prof"<?php echo menu_sel('prof')?>>Профессии</a></li>
+        <li><a href="?topic=study"<?php echo menu_sel('study')?>>Учебные заведения</a></li>
+        <li><a href="?topic=test"<?php echo menu_sel('test')?>>Тесты</a></li>
+        <li><a href="?topic=org"<?php echo menu_sel('org')?>>Организации</a></li>
+        <li><a href="?topic=contact"<?php echo menu_sel('contact')?>>Контакты</a></li>
       </ul>
     </div>
     <div id="content-container">

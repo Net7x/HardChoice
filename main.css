@@ -42,6 +42,16 @@
 	border-right: 1px solid #fff;
 }
 
+#selected 
+{
+	display: block;
+	float: left;
+	padding: 5px 10px;
+	color: #336699;
+	text-decoration: none;
+	border-bottom: 2px solid #336699;
+}
+
 #navigation li a:hover 
 { 
   background: #336699; 
